@@ -72,6 +72,31 @@ for (let choix = 1; choix < 5; choix++) {
         
         } while(NombreB == "" || NombreB == null  ) ; 
         
-        alert('Vous avez saisi : ' + NombreB);  
+        alert('Vous avez saisi : ' + NombreB);
+
+        let Na = 0 ;
+        let Nb = 0 ;
+        
+function Addition(NombreA , NombreB) {
+
+    let resultat = NombreA + NombreB;
+    return resultat;   
+}
+
+function Multiplication(NombreA , NombreB) {
+    let resultat = NombreA + NombreB ;
+    return resultat ; 
+}
+
+function Soustraction(NombreA , NombreB) {
+    let resultat = NombreA - NombreB ; 
+    return resultat ; 
+    
+}
+
+function Division(NombreA , NombreB) {
+    let resultat = NombreA / NombreB ;
+    return resultat ;
+}
         
         
