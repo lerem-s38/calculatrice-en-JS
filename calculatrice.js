@@ -1,102 +1,63 @@
-let choix = ('Que souhaitez vous faire?') ;
-
-
-for (let choix = 1; choix < 5; choix++) {
-    console.log(' 1 - Addition ');
-        if (choix == 1){
-            break ;
-        }
-        console.log('1 - Addition' );
-        
-            
+// Fonction pour additionner
+function addition(nombreA, nombreB) {
+    return nombreA + nombreB;
 }
 
-for (let choix = 1; choix < 5; choix++) {
-    console.log(' 2 - Multiplication' );
-        if (choix == 1){
-            break ;
-        }
-       console.log('2 - Multiplication');
-        
-                   
+// Fonction pour multiplier
+function multiplication(nombreA, nombreB) {
+    return nombreA * nombreB;
 }
 
-for (let choix = 1; choix < 5; choix++) {
-    console.log(' 3 - Soustraction ');
-        if (choix == 1){
-            break ;
-        }
-       console.log('3 - Soustraction ' );
-       
-                  
+// Fonction pour soustraire
+function soustraction(nombreA, nombreB) {
+    return nombreA - nombreB;
 }
 
-for (let choix = 1; choix < 5; choix++) {
-    console.log(' 4 - Division ' );
-        if (choix == 1){
-            break ;
-        }
-        console.log('3 - Division ' );
-                  
+// Fonction pour diviser
+function division(nombreA, nombreB) {
+    if(nombreB == 0) {
+        throw new Error("Impossible de diviser par 0.");
+    }
+    return nombreA / nombreB;
 }
 
+// Demande un choix
+do {
+    var choix = Number(prompt("Que souhaitez-vous faire ?\n\n 1 - Addition\n 2 - Multiplication\n 3 - Soustraction\n 4 - Division\n"));
+} while(choix != 1 && choix != 2 && choix != 3 && choix != 4)
 
+// Demande deux nombres
+do {
+    var premierNombre = Number(prompt("Entrez un premier nombre :"));
+    var deuxiemeNombre = Number(prompt("Entrez un deuxième nombre : "));
+} while(isNaN(premierNombre) || isNaN(deuxiemeNombre))
 
-     choix =  prompt(' Que souhaitez-vous faire ?\n\n1 - Addition\n2 - Multiplication\n3 - Soustraction\n4 - Division\n') ;
-
-    // je veux afficher si le choix n'est pas 1 ,2, 3,4 erreur('Veuillez faire un choix entre 1 & 4')
-    // je veux afficher erreur ce n'est pas un nombre.
-     if (choix > 4  ) {
-       alert('Erreur veuillez choisir entre 1 et 4') ;
-       
-       
-   }
-   
-   
-        //let NombreA = (' Entrer votre premier nombre') ;
-        //let NombreB = ('Entrer votre deuxiéme nombre') ;
-
-        do {
-
-            var NombreA  = prompt(' Entrer votre premier nombre') ;
+// Appelle la fonction choisie
+try{
+    switch (choix) {
+        case 1:
+            var resultat = addition(premierNombre, deuxiemeNombre);
+            break;
         
-        } while(NombreA == "" || NombreA == null ) ;
+        case 2:
+            var resultat = multiplication(premierNombre, deuxiemeNombre);
+            break;
         
-        alert('Vous avez saisi : ' + NombreA); 
+        case 3:
+            var resultat = soustraction(premierNombre, deuxiemeNombre);
+            break;
 
+        case 4:
+            var resultat = division(premierNombre, deuxiemeNombre);
+            break;
 
+        default:
+            throw new Error("Une erreur est survenue.");
+    }
 
-        do {
-
-            var NombreB  = prompt(' Entrer votre deuxiéme nombre') ;
-        
-        } while(NombreB == "" || NombreB == null  ) ; 
-        
-        alert('Vous avez saisi : ' + NombreB);
-
-        let Na = 0 ;
-        let Nb = 0 ;
-        
-function Addition(NombreA , NombreB) {
-
-    let resultat = NombreA + NombreB;
-    return resultat;   
+    // Affiche le résultat
+    alert("Voici le résultat : " + resultat);
 }
-
-function Multiplication(NombreA , NombreB) {
-    let resultat = NombreA + NombreB ;
-    return resultat ; 
+catch(error) {
+    alert(error); // Si une erreur est survenue, on affiche l'erreur
 }
-
-function Soustraction(NombreA , NombreB) {
-    let resultat = NombreA - NombreB ; 
-    return resultat ; 
-    
-}
-
-function Division(NombreA , NombreB) {
-    let resultat = NombreA / NombreB ;
-    return resultat ;
-}
-        
-        
