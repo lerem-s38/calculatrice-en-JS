@@ -49,7 +49,13 @@ function division (nombreA, nombreB) {
             throw new Error("Une erreur est survenue.");
     }
 
+    alert("Voici le résultat : " + resultat);
+    }
     catch(error) {
         alert(error); // Si une erreur est survenue, on affiche l'erreur
     }
+
+    restart = confirm("Souhaitez-vous recommencer un calcul ?");
+  
+}while(restart) 
        
